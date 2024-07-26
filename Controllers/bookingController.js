@@ -4,6 +4,7 @@ const bookings = require('../Models/bookingModel')
 // Tour Booking
 exports.createBooking = async (req, res) => {
     const { packageName, email, fullName, phone, guestSize, bookAt, totalAmount } = req.body
+    console.log("first")
     try {
         const newBooking = new bookings({ packageName, email, fullName, phone, guestSize, totalAmount, bookAt: new Date(bookAt) })
         await newBooking.save()
